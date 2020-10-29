@@ -15,6 +15,7 @@
 !define SYSTEM_BG_COLOR #1168BD
 !define SYSTEM_REVIEW_BG_COLOR #F8EA8C
 !define EXTERNAL_SYSTEM_BG_COLOR #999999
+!define ELEMENT_REVIEW_FONT_COLOR #000000
 
 ' Styling
 ' ##################################
@@ -42,9 +43,9 @@ skinparam rectangle<<system>> {
 
 skinparam rectangle<<system_review>> {
     StereotypeFontColor ELEMENT_FONT_COLOR
-    FontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_REVIEW_FONT_COLOR
     BackgroundColor SYSTEM_REVIEW_BG_COLOR
-    BorderColor #FFFFFF
+    BorderColor #000000
 }
 
 skinparam rectangle<<external_system>> {

@@ -1,18 +1,18 @@
 @startuml "enterprise"
-!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Context.puml
+!includeurl https://raw.githubusercontent.com/cmiranda314/C4-PlantUML/master/C4_Context.puml
 ' uncomment the following line and comment the first to use locally
 ' !include C4_Context.puml
 
-LAYOUT_TOP_DOWN
+'LAYOUT_TOP_DOWN
 'LAYOUT_AS_SKETCH
-LAYOUT_WITH_LEGEND
+'LAYOUT_WITH_LEGEND
 
 Person(customer, "Customer", "A customer of Widgets Limited.")
 
 Enterprise_Boundary(c0, "Widgets Limited") {
     Person(csa, "Customer Service Agent", "Deals with customer enquiries.")
 
-    System(ecommerce, "E-commerce System", "Allows customers to buy widgts online via the widgets.com website.")
+    System_Review(ecommerce, "E-commerce System")
 
     System(fulfilment, "Fulfilment System", "Responsible for processing and shipping of customer orders.")
 }
