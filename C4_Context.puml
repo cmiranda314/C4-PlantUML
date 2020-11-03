@@ -14,9 +14,16 @@
 !define EXTERNAL_PERSON_BG_COLOR #686868
 !define SYSTEM_BG_COLOR #1168BD
 !define SYSTEM_REVIEW_BG_COLOR #F8EA8C
+!define SERVICES_BG_COLOR #6F678A
+
+
 !define SYSTEM_REVIEW_COLOR #000000
-!define EXTERNAL_SYSTEM_BG_COLOR #999999
 !define ELEMENT_REVIEW_FONT_COLOR #000000
+
+
+!define EXTERNAL_SYSTEM_BG_COLOR #999999
+
+
 
 ' Styling
 ' ##################################
@@ -49,6 +56,12 @@ skinparam rectangle<<system_review>> {
     BorderColor SYSTEM_REVIEW_COLOR
 }
 
+skinparam rectangle<<services>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor SERVICES_BG_COLOR
+    BorderColor SYSTEM_REVIEW_COLOR
+}
 skinparam rectangle<<external_system>> {
     StereotypeFontColor ELEMENT_FONT_COLOR
     FontColor ELEMENT_FONT_COLOR
@@ -80,6 +93,8 @@ legend right
 |<PERSON_BG_COLOR>      | person |
 |<EXTERNAL_PERSON_BG_COLOR>      | external person |
 |<SYSTEM_BG_COLOR>   | system |
+|<SYSTEM_REVIEW_BG_COLOR>   | system review |
+|<SYSTEM_SERVICES_BG_COLOR>   | services |
 |<EXTERNAL_SYSTEM_BG_COLOR>      | external system |
 endlegend
 !enddefinelong
@@ -99,6 +114,9 @@ endlegend
 !define System_Review(e_alias, e_label) rectangle "==e_label" <<system_review>> as e_alias
 !define System_Review(e_alias, e_label, e_descr) rectangle "==e_label\n\n e_descr" <<system_review>> as e_alias
 
+!define Services(e_alias, e_label) rectangle "==e_label" <<services>> as e_alias
+!define Services(e_alias, e_label, e_descr) rectangle "==e_label\n\n e_descr" <<services>> as e_alias
+
 !define System_Ext(e_alias, e_label) rectangle "==e_label" <<external_system>> as e_alias
 !define System_Ext(e_alias, e_label, e_descr) rectangle "==e_label\n\n e_descr" <<external_system>> as e_alias
 
@@ -113,3 +131,5 @@ endlegend
 
 !define Enterprise_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "Enterprise")
 !define System_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "System")
+!define System_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "System_Review")
+!define System_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "Services")
