@@ -1,4 +1,4 @@
-!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Context.puml
+!includeurl https://raw.githubusercontent.com/cmiranda314/C4-PlantUML/master/C4_Context.puml
 ' uncomment the following line and comment the first to use locally
 ' !include C4_Context.puml
 
@@ -11,14 +11,23 @@
 ' ##################################
 
 !define CONTAINER_BG_COLOR #438DD5
+!define CONTAINER_REVIEW_BG_COLOR #F8EA8C
 
 ' Styling
 ' ##################################
+
 
 skinparam rectangle<<container>> {
     StereotypeFontColor ELEMENT_FONT_COLOR
     FontColor ELEMENT_FONT_COLOR
     BackgroundColor CONTAINER_BG_COLOR
+    BorderColor #3C7FC0
+}
+
+skinparam rectangle<<container-review>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor CONTAINER_REVIEW_BG_COLOR
     BorderColor #3C7FC0
 }
 
@@ -41,6 +50,7 @@ legend right
 |<SYSTEM_BG_COLOR>   | system |
 |<EXTERNAL_SYSTEM_BG_COLOR>      | external system |
 |<CONTAINER_BG_COLOR>   | container |
+|<CONTAINER_REVIEW_BG_COLOR>   | container review |
 endlegend
 !enddefinelong
 
@@ -50,6 +60,9 @@ endlegend
 !define Container(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<container>> as e_alias
 !define Container(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<container>> as e_alias
 
+!define ContainerReview(e_alias, e_label, e_techn) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<container_review>> as e_alias
+!define ContainerReview(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<container_review>> as e_alias
+
 !define ContainerDb(e_alias, e_label, e_techn) database "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//" <<container>> as e_alias
 !define ContainerDb(e_alias, e_label, e_techn, e_descr) database "==e_label\n//<size:TECHN_FONT_SIZE>[e_techn]</size>//\n\n e_descr" <<container>> as e_alias
 
@@ -57,3 +70,4 @@ endlegend
 ' ##################################
 
 !define Container_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "Container")
+!define Container_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "ContainerReview")
