@@ -56,7 +56,7 @@ skinparam rectangle<<system_review>> {
     BorderColor SYSTEM_REVIEW_COLOR
 }
 
-skinparam rectangle<<services>> {
+skinparam rectangle<<service-system>> {
     StereotypeFontColor ELEMENT_FONT_COLOR
     FontColor ELEMENT_FONT_COLOR
     BackgroundColor SERVICES_BG_COLOR
@@ -94,7 +94,7 @@ legend right
 |<EXTERNAL_PERSON_BG_COLOR>      | external person |
 |<SYSTEM_BG_COLOR>   | system |
 |<SYSTEM_REVIEW_BG_COLOR>   | system review |
-|<SYSTEM_SERVICES_BG_COLOR>   | services |
+|<SYSTEM_SERVICES_BG_COLOR>   | service system |
 |<EXTERNAL_SYSTEM_BG_COLOR>      | external system |
 endlegend
 !enddefinelong
@@ -114,8 +114,8 @@ endlegend
 !define System_Review(e_alias, e_label) rectangle "==e_label" <<system_review>> as e_alias
 !define System_Review(e_alias, e_label, e_descr) rectangle "==e_label\n\n e_descr" <<system_review>> as e_alias
 
-!define Services(e_alias, e_label) rectangle "==e_label" <<services>> as e_alias
-!define Services(e_alias, e_label, e_descr) rectangle "==e_label\n\n e_descr" <<services>> as e_alias
+!define ServiceSystem(e_alias, e_label) rectangle "==e_label" <<service-system>> as e_alias
+!define ServiceSystem(e_alias, e_label, e_descr) rectangle "==e_label\n\n e_descr" <<service-system>> as e_alias
 
 !define System_Ext(e_alias, e_label) rectangle "==e_label" <<external_system>> as e_alias
 !define System_Ext(e_alias, e_label, e_descr) rectangle "==e_label\n\n e_descr" <<external_system>> as e_alias
@@ -132,4 +132,4 @@ endlegend
 !define Enterprise_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "Enterprise")
 !define System_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "System")
 !define System_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "System_Review")
-!define System_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "Services")
+!define System_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "ServiceSystem")
