@@ -131,5 +131,5 @@ endlegend
 
 !define Enterprise_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "Enterprise")
 !define System_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "System")
-!define System_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "System_Review")
-!define System_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "ServiceSystem")
+!define System_Review_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "System_Review")
+!define ServiceSystem_Boundary(e_alias, e_label) Boundary(e_alias, e_label, "ServiceSystem")
